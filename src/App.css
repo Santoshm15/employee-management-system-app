@@ -1,0 +1,2450 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #eaf3ff;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+/* =========================================================
+   APP
+========================================================= */
+
+.app {
+  min-height: 100vh;
+  background: #eaf3ff;
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  width: 225px;
+  height: 100vh;
+
+  background: #121c40;
+  color: white;
+
+  padding: 22px 12px 0;
+
+  display: flex;
+  flex-direction: column;
+
+  z-index: 1000;
+}
+
+/* LOGO */
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 0 16px;
+
+  margin-bottom: 30px;
+}
+
+.sidebar-logo span {
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.logo-symbol {
+  width: 35px;
+  height: 35px;
+
+  border: 2px solid white;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+}
+
+/* ADMIN */
+
+.admin-profile {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 16px;
+
+  margin-bottom: 25px;
+}
+
+.admin-avatar {
+  width: 62px;
+  height: 62px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #ffbd0b;
+
+  border: 2px solid white;
+
+  color: #121c40;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.admin-info h3 {
+  margin: 0 0 3px;
+
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.admin-info span {
+  font-size: 10px;
+  color: #d6d9e4;
+}
+
+/* SIDEBAR SECTION */
+
+.sidebar-section {
+  margin-bottom: 9px;
+}
+
+.section-title {
+  margin: 0 12px 7px;
+
+  font-size: 10px;
+  color: #e0e3eb;
+}
+
+/* SIDEBAR ITEM */
+
+.sidebar-item {
+  min-height: 37px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 8px 12px;
+
+  margin-bottom: 3px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 11px;
+
+  transition: all 0.2s ease;
+}
+
+.sidebar-item:hover {
+  background: rgba(255, 190, 11, 0.2);
+  transform: translateX(2px);
+}
+
+.sidebar-item.active {
+  background: #ffbd0b;
+  color: #000;
+}
+
+.notification {
+  margin-left: auto;
+
+  width: 15px;
+  height: 15px;
+
+  border-radius: 50%;
+
+  background: red;
+  color: white;
+
+  font-size: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LOGOUT */
+
+.logout-button {
+  margin-top: auto;
+  margin-bottom: 10px;
+
+  height: 40px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #ff0808;
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background: #d90000;
+}
+
+/* SIDEBAR BOTTOM */
+
+.sidebar-bottom {
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  overflow: hidden;
+}
+
+.sidebar-bottom span {
+  width: 28px;
+  height: 28px;
+
+  border-radius: 50%;
+
+  background: #e95c65;
+}
+
+.sidebar-bottom span:nth-child(2) {
+  background: #ffbd0b;
+}
+
+.sidebar-bottom span:nth-child(3) {
+  background: white;
+}
+
+.sidebar-bottom span:nth-child(4) {
+  background: #3fc1c9;
+}
+
+.sidebar-bottom span:nth-child(5) {
+  background: #e95c65;
+}
+
+/* =========================================================
+   MAIN AREA
+========================================================= */
+
+.main-area {
+  margin-left: 225px;
+
+  min-height: 100vh;
+
+  background: #eaf3ff;
+}
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.topbar {
+  height: 105px;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  padding: 20px 30px;
+
+  gap: 45px;
+
+  background: #e7f0fb;
+}
+
+.menu-button {
+  border: none;
+
+  background: transparent;
+
+  color: #111;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.search-box {
+  width: 430px;
+  height: 42px;
+
+  background: white;
+
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.candidate-button {
+  height: 100%;
+  width: 130px;
+
+  border: none;
+
+  background: #29459b;
+
+  color: white;
+
+  font-size: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  cursor: pointer;
+}
+
+.search-box input {
+  height: 100%;
+
+  flex: 1;
+
+  border: none;
+  outline: none;
+
+  padding: 0 42px 0 18px;
+
+  font-size: 11px;
+
+  color: #333;
+}
+
+.search-box input::placeholder {
+  color: #999;
+}
+
+.search-icon {
+  position: absolute;
+
+  right: 14px;
+
+  color: #9b9b9b;
+}
+
+.topbar-actions {
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+}
+
+.top-icon {
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.top-icon:hover {
+  transform: translateY(-2px);
+}
+
+.notification-icon {
+  background: #29459b;
+  color: white;
+}
+
+.settings-icon {
+  background: #ffbd0b;
+  color: #111;
+}
+
+.mail-icon {
+  background: #378b20;
+  color: white;
+}
+
+.top-badge {
+  position: absolute;
+
+  top: -3px;
+  right: -3px;
+
+  width: 14px;
+  height: 14px;
+
+  border-radius: 50%;
+
+  background: red;
+
+  color: white;
+
+  font-size: 7px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================================================
+   PAGE CONTENT
+========================================================= */
+
+.page-content {
+  padding: 0 18px 25px;
+}
+
+.dashboard-placeholder {
+  padding: 30px;
+}
+
+/* =========================================================
+   EMPLOYEE MANAGEMENT
+========================================================= */
+
+.employee-management {
+  width: 100%;
+}
+
+/* BREADCRUMB */
+
+.employee-breadcrumb {
+  margin: 0 0 12px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: #111827;
+}
+
+/* EMPLOYEE CARD */
+
+.employee-card {
+  width: 100%;
+
+  background: white;
+
+  border-radius: 15px;
+
+  padding: 16px 18px 12px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+/* CARD HEADER */
+
+.employee-card-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 14px;
+}
+
+.employee-card-header h2 {
+  margin: 0;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  color: #111;
+}
+
+/* FILTER + EXPORT */
+
+.employee-card-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+}
+
+.filter-button {
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #111;
+}
+
+.export-button {
+  height: 40px;
+
+  padding: 0 18px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #3d8b20;
+
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  cursor: pointer;
+}
+
+.export-button:hover {
+  background: #34781c;
+}
+
+/* =========================================================
+   EMPLOYEE TABLE
+========================================================= */
+
+.employee-table-container {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+.employee-table {
+  width: 100%;
+
+  border-collapse: separate;
+
+  border-spacing: 0;
+
+  table-layout: fixed;
+}
+
+/* TABLE HEADER */
+
+.employee-table thead th {
+  height: 56px;
+
+  padding: 0 14px;
+
+  background: #dfeafb;
+
+  color: #111;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-align: left;
+}
+
+.employee-table thead th:first-child {
+  border-radius: 5px 0 0 5px;
+}
+
+.employee-table thead th:last-child {
+  border-radius: 0 5px 5px 0;
+}
+
+/* COLUMN WIDTHS */
+
+.employee-table th:nth-child(1),
+.employee-table td:nth-child(1) {
+  width: 18%;
+}
+
+.employee-table th:nth-child(2),
+.employee-table td:nth-child(2) {
+  width: 12%;
+}
+
+.employee-table th:nth-child(3),
+.employee-table td:nth-child(3) {
+  width: 18%;
+}
+
+.employee-table th:nth-child(4),
+.employee-table td:nth-child(4) {
+  width: 15%;
+}
+
+.employee-table th:nth-child(5),
+.employee-table td:nth-child(5) {
+  width: 12%;
+}
+
+.employee-table th:nth-child(6),
+.employee-table td:nth-child(6) {
+  width: 12%;
+}
+
+.employee-table th:nth-child(7),
+.employee-table td:nth-child(7) {
+  width: 13%;
+}
+
+/* TABLE BODY */
+
+.employee-table tbody td {
+  height: 57px;
+
+  padding: 0 14px;
+
+  color: #111;
+
+  font-size: 12px;
+
+  border-bottom: 1px solid #edf0f5;
+}
+
+/* ALTERNATING ROW */
+
+.employee-table tbody tr:nth-child(even) td {
+  background: #dfeafb;
+}
+
+.employee-table tbody tr:nth-child(odd) td {
+  background: white;
+}
+
+/* NAME */
+
+.employee-name {
+  font-weight: 500;
+
+  text-transform: none;
+}
+
+/* CATEGORY */
+
+.employee-category {
+  display: inline-block;
+
+  padding: 0;
+
+  background: transparent;
+
+  color: #111;
+
+  font-size: 12px;
+
+  font-weight: 400;
+}
+
+/* ACTION CELL */
+
+.employee-action-cell {
+  position: relative;
+}
+
+/* ACTION BUTTON */
+
+.employee-dropdown-button {
+  width: 96px;
+  height: 33px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 5px;
+  background: #29479b;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.employee-dropdown-button:hover {
+  background: #203987;
+}
+
+/* ================================
+   ACTION DROPDOWN - FIGMA DESIGN
+================================ */
+
+.action-dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.action-dropdown {
+  position: absolute;
+  top: calc(100% - 1px);
+  right: 0;
+  width: 96px;
+  background: #29479b;
+  border-radius: 0 0 5px 5px;
+  overflow: hidden;
+  z-index: 1000;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
+}
+
+.action-dropdown-item {
+  width: 100%;
+  height: 27px;
+  padding: 0;
+  border: none;
+  background: #29479b;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: inherit;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+.action-dropdown-item:hover {
+  background: #203b88;
+  color: #ffffff;
+}
+
+/* =========================================================
+   EMPLOYEE PROFILE
+========================================================= */
+
+.employee-profile-page {
+  width: 100%;
+
+  min-height: 100%;
+
+  padding: 0 0 30px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   PROFILE BREADCRUMB
+========================================================= */
+
+.profile-breadcrumb {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin: 0 0 22px;
+
+  padding: 0 8px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: #111111;
+}
+
+.profile-breadcrumb strong {
+  font-weight: 700;
+}
+
+/* =========================================================
+   PROFILE LAYOUT
+========================================================= */
+
+.profile-layout {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: 250px minmax(0, 1fr);
+
+  gap: 16px;
+
+  align-items: start;
+}
+
+/* =========================================================
+   PROFILE LEFT MENU
+========================================================= */
+
+.profile-section-menu {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 10px;
+
+  padding: 20px 10px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  box-sizing: border-box;
+}
+
+.profile-section-button {
+  width: 100%;
+
+  height: 47px;
+
+  min-height: 47px;
+
+  max-height: 47px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: #dfeaf8;
+
+  color: #111111;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  padding: 0 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: background-color 0.2s ease;
+}
+
+.profile-section-button:hover {
+  background: #d4e2f4;
+}
+
+.profile-section-button.active {
+  background: #ffbd0b;
+
+  color: #000000;
+
+  font-weight: 600;
+}
+
+/* =========================================================
+   PROFILE RIGHT CARD
+========================================================= */
+
+.profile-details-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 10px;
+
+  min-height: 0;
+
+  height: auto;
+
+  padding: 36px 26px 30px;
+
+  box-sizing: border-box;
+
+  align-self: start;
+}
+
+/* =========================================================
+   PERSONAL DETAILS
+========================================================= */
+
+.personal-details-content {
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  padding: 42px 40px;
+
+  box-sizing: border-box;
+}
+
+/* EDIT */
+
+.personal-edit-button {
+  position: absolute;
+
+  top: 28px;
+
+  right: 30px;
+
+  border: none;
+
+  background: transparent;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 4px;
+
+  color: #111111;
+
+  cursor: pointer;
+
+  padding: 4px;
+}
+
+.personal-edit-button svg {
+  color: #8b8b8b;
+}
+
+.personal-edit-button span {
+  font-size: 14px;
+
+  font-weight: 400;
+}
+
+/* PROFILE ICON */
+
+.personal-profile-icon {
+  width: 126px;
+
+  height: 126px;
+
+  border-radius: 50%;
+
+  background: #ffb914;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #10204a;
+
+  margin-top: 8px;
+
+  flex-shrink: 0;
+}
+
+/* DOTS */
+
+.personal-dots {
+  font-size: 20px;
+
+  color: #777777;
+
+  line-height: 1;
+
+  margin-top: 14px;
+
+  margin-bottom: 18px;
+}
+
+/* LABEL */
+
+.personal-label {
+  display: block;
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  color: #111111;
+
+  text-align: center;
+}
+
+/* NAME */
+
+.personal-name-section {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  margin-bottom: 30px;
+}
+
+.personal-name {
+  margin-top: 8px;
+
+  font-size: 22px;
+
+  font-weight: 700;
+
+  color: #111111;
+
+  text-align: center;
+}
+
+/* DEPARTMENT */
+
+.personal-department-section {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  margin-bottom: 34px;
+}
+
+.personal-value {
+  display: block;
+
+  margin-top: 8px;
+
+  font-size: 21px;
+
+  font-weight: 700;
+
+  color: #111111;
+
+  text-align: center;
+}
+
+/* JOB ROW */
+
+.personal-job-row {
+  width: 78%;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  column-gap: 100px;
+}
+
+.personal-job-item {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+/* =========================================================
+   CONTACT DETAILS
+========================================================= */
+
+.contact-details-content {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  box-sizing: border-box;
+}
+
+.contact-two-column {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  column-gap: 28px;
+
+  margin-bottom: 25px;
+}
+
+.contact-field {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+.contact-field label {
+  color: #111111;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  line-height: 1.3;
+}
+
+.contact-value {
+  width: 100%;
+
+  min-height: 41px;
+
+  background: #dfeaf8;
+
+  border-radius: 9px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 0 22px;
+
+  box-sizing: border-box;
+
+  color: #333333;
+
+  font-size: 13px;
+
+  font-weight: 400;
+}
+
+.contact-field.full-width {
+  width: 100%;
+
+  margin-bottom: 25px;
+}
+
+.contact-field.full-width .contact-value {
+  min-height: 43px;
+}
+
+.city-field {
+  width: 45%;
+
+  margin-bottom: 25px;
+}
+
+.city-field .contact-value {
+  min-height: 41px;
+}
+
+.address-field {
+  margin-bottom: 0 !important;
+}
+
+.address-value {
+  min-height: 72px !important;
+
+  align-items: flex-start;
+
+  padding-top: 18px;
+}
+
+/* =========================================================
+   NEXT OF KIN DETAILS
+========================================================= */
+
+.next-of-kin-details-content {
+  width: 100%;
+
+  height: auto;
+
+  min-height: 0;
+
+  box-sizing: border-box;
+
+  padding: 40px 28px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 26px;
+}
+
+.next-of-kin-two-column {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  column-gap: 24px;
+}
+
+.next-of-kin-field {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+.next-of-kin-field label {
+  font-size: 14px;
+
+  font-weight: 400;
+
+  color: #111111;
+
+  margin-left: 8px;
+}
+
+.next-of-kin-value {
+  width: 100%;
+
+  height: 42px;
+
+  min-height: 42px;
+
+  max-height: 42px;
+
+  box-sizing: border-box;
+
+  background: #dfeaf8;
+
+  border-radius: 9px;
+
+  padding: 0 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  color: #333333;
+}
+
+.relationship-value {
+  justify-content: space-between;
+}
+
+.relationship-arrow {
+  color: #111111;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+.next-of-kin-address-field {
+  width: 100%;
+
+  margin-top: 0;
+}
+
+.next-of-kin-address {
+  height: 58px;
+
+  min-height: 58px;
+
+  max-height: 58px;
+
+  align-items: flex-start;
+
+  padding-top: 17px;
+}
+
+/* =========================================================
+   OTHER PROFILE SECTIONS
+========================================================= */
+
+.profile-placeholder {
+  width: 100%;
+
+  min-height: 200px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.profile-placeholder h3 {
+  margin: 0 0 10px;
+
+  font-size: 20px;
+
+  color: #111111;
+}
+
+.profile-placeholder p {
+  margin: 0;
+
+  color: #777777;
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+  .search-box {
+    width: 350px;
+  }
+
+  .profile-layout {
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+
+  .personal-job-row {
+    width: 90%;
+
+    column-gap: 50px;
+  }
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .main-area {
+    margin-left: 200px;
+  }
+
+  .topbar {
+    width: 100%;
+  }
+
+  .employee-table {
+    min-width: 850px;
+  }
+
+  .profile-layout {
+    grid-template-columns: 210px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 750px) {
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-section-menu {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .profile-details-card {
+    width: 100%;
+  }
+
+  .contact-two-column,
+  .next-of-kin-two-column {
+    grid-template-columns: 1fr;
+
+    row-gap: 20px;
+  }
+
+  .city-field {
+    width: 100%;
+  }
+
+  .personal-job-row {
+    width: 100%;
+
+    column-gap: 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .sidebar {
+    width: 70px;
+  }
+
+  .main-area {
+    margin-left: 70px;
+  }
+
+  .sidebar-logo span,
+  .admin-info,
+  .section-title,
+  .sidebar-item span,
+  .logout-button span {
+    display: none;
+  }
+
+  .sidebar-logo {
+    justify-content: center;
+
+    padding: 0;
+  }
+
+  .admin-profile {
+    justify-content: center;
+
+    padding: 0;
+  }
+
+  .sidebar-item {
+    justify-content: center;
+  }
+
+  .page-content {
+    padding: 0 10px;
+  }
+
+  .topbar {
+    padding: 15px;
+
+    gap: 15px;
+  }
+
+  .search-box {
+    width: 300px;
+  }
+
+  .topbar-actions {
+    gap: 8px;
+  }
+
+  .employee-management {
+    width: 100%;
+  }
+
+  .profile-breadcrumb {
+    font-size: 12px;
+
+    gap: 5px;
+
+    margin-bottom: 15px;
+  }
+
+  .profile-details-card {
+    padding: 20px 15px;
+  }
+
+  .personal-details-content {
+    padding: 35px 15px;
+  }
+
+  .personal-job-row {
+    grid-template-columns: 1fr;
+
+    row-gap: 25px;
+  }
+
+  .personal-edit-button {
+    top: 15px;
+
+    right: 15px;
+  }
+
+  .next-of-kin-details-content {
+    padding: 25px 15px;
+  }
+}
+/* =========================================================
+   EDUCATION QUALIFICATIONS
+   Figma-matching CSS ONLY
+   ========================================================= */
+
+/* =========================================================
+   EDUCATION QUALIFICATIONS - FIGMA TABS
+   ========================================================= */
+
+.education-details-content {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Education tab buttons */
+.education-view-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.education-view-tab {
+  border: none;
+  outline: none;
+  background: #e1ecfa;
+  color: #111;
+  height: 30px;
+  padding: 0 16px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.education-view-tab.active {
+  background: #ffbc0f;
+  color: #000;
+  font-weight: 600;
+}
+
+.education-view-tab:hover {
+  background: #ffbc0f;
+  color: #000;
+}
+
+/* =========================================================
+   ACADEMIC DETAILS VIEW
+   ========================================================= */
+
+.education-academic-panel {
+  width: 100%;
+}
+
+.education-details-title {
+  margin: 0 0 24px 0;
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 600;
+  color: #111;
+}
+
+.education-two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+  width: 100%;
+}
+
+.education-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.education-field label {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: 500;
+  color: #111;
+}
+
+.education-value {
+  width: 100%;
+  min-height: 39px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  background: #e1ecfa;
+  border-radius: 8px;
+  color: #555;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.education-full-width {
+  width: 100%;
+}
+
+.education-date-value {
+  justify-content: space-between;
+}
+
+/* =========================================================
+   ACADEMIC / PROFESSIONAL RECORDS VIEW
+   ========================================================= */
+
+.education-records-section {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.education-records-title {
+  margin: 0 0 22px 0;
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 600;
+  color: #111;
+}
+
+.education-records-heading {
+  margin: 0 0 10px 0;
+  font-size: 11px;
+  line-height: 1.3;
+  font-weight: 600;
+  color: #111;
+}
+
+.education-records-heading.professional-heading {
+  margin-top: 24px;
+}
+
+.education-record-card {
+  width: 100%;
+  min-height: 51px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding: 9px 15px;
+  margin-bottom: 8px;
+  background: #e1ecfa;
+  border-radius: 8px;
+}
+
+.education-record-card strong {
+  font-size: 10px;
+  line-height: 1.3;
+  font-weight: 600;
+  color: #555;
+}
+
+.education-record-card span {
+  font-size: 8px;
+  line-height: 1.3;
+  color: #555;
+}
+
+.education-record-card p {
+  margin: 3px 0 0 0;
+  font-size: 8px;
+  line-height: 1.4;
+  color: #555;
+}
+
+.education-web-developer {
+  margin-top: 38px;
+  min-height: 70px;
+}
+
+/* =========================================================
+   IMPORTANT:
+   Records are now a separate view.
+   They must NOT scroll inside the page.
+   ========================================================= */
+
+.education-details-content {
+  overflow: visible;
+}
+
+.education-records-section {
+  overflow: visible;
+  scroll-margin-top: 0;
+}
+
+/* =========================================================
+   PROFESSIONAL DETAILS
+   Education Qualifications -> Academic / Professional Records
+   -> Professional Details
+========================================================= */
+
+.professional-details-section {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.professional-details-title {
+  margin: 0 0 28px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #111111;
+}
+
+.professional-two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+  margin-bottom: 20px;
+}
+
+.professional-field {
+  width: 100%;
+  min-width: 0;
+}
+
+.professional-field label {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #111111;
+}
+
+.professional-value {
+  width: 100%;
+  min-height: 42px;
+  padding: 0 16px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #e2edf9;
+  border-radius: 8px;
+
+  font-size: 11px;
+  color: #555555;
+}
+
+.professional-date-value {
+  justify-content: space-between;
+}
+
+.professional-date-value svg {
+  color: #888888;
+  flex-shrink: 0;
+}
+
+.professional-dropdown-arrow {
+  font-size: 8px;
+  color: #111111;
+}
+
+.professional-description-field {
+  margin-top: 2px;
+}
+
+.professional-description {
+  width: 100%;
+  min-height: 105px;
+  box-sizing: border-box;
+
+  padding: 13px 16px;
+
+  background: #e2edf9;
+  border-radius: 8px;
+
+  font-size: 9px;
+  line-height: 1.45;
+  color: #555555;
+}
+
+/* =========================================================
+   PROFESSIONAL RECORD CARDS
+========================================================= */
+
+.education-record-button {
+  width: 100%;
+  border: none;
+  text-align: left;
+  font-family: inherit;
+  cursor: pointer;
+  color: inherit;
+}
+
+.education-record-button:hover {
+  opacity: 0.95;
+}
+
+.education-record-button:focus {
+  outline: none;
+}
+/* =========================================================
+   PROFESSIONAL RECORDS / PROFESSIONAL DETAILS
+   ========================================================= */
+
+.professional-details-section {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.professional-details-title {
+  margin: 0 0 30px 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #111111;
+}
+
+.professional-two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.professional-field {
+  min-width: 0;
+}
+
+.professional-field label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #111111;
+}
+
+.professional-value {
+  width: 100%;
+  min-height: 40px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 18px;
+
+  background: #e3edf9;
+  border-radius: 9px;
+
+  font-size: 12px;
+  color: #555555;
+}
+
+.professional-select-value {
+  justify-content: space-between;
+}
+
+.professional-dropdown-arrow {
+  font-size: 8px;
+  color: #000000;
+}
+
+.professional-date-value {
+  justify-content: space-between;
+}
+
+.professional-date-value svg {
+  color: #777777;
+  flex-shrink: 0;
+}
+
+.professional-description-field {
+  margin-top: 2px;
+}
+
+.professional-description {
+  width: 100%;
+  min-height: 105px;
+  box-sizing: border-box;
+
+  padding: 14px 18px;
+
+  background: #e3edf9;
+  border-radius: 9px;
+
+  font-size: 9px;
+  line-height: 1.45;
+  color: #555555;
+}
+
+.professional-description div {
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================================
+   PROFESSIONAL RECORD CARDS
+   ========================================================= */
+
+.education-record-button {
+  width: 100%;
+  border: none;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.education-record-button:hover {
+  opacity: 0.95;
+}
+
+.education-record-button:focus {
+  outline: none;
+}
+
+.education-web-developer {
+  cursor: pointer;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .professional-two-column {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================================
+   GUARANTOR DETAILS - FIGMA DESIGN
+   ========================================================= */
+
+.guarantor-details-content {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.guarantor-details-title {
+  margin: 0 0 24px;
+  padding: 0;
+  color: #111111;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.guarantor-card {
+  width: 100%;
+  min-height: 58px;
+  box-sizing: border-box;
+
+  background: #dfeaf8;
+  border-radius: 9px;
+
+  padding: 15px 20px;
+
+  margin-bottom: 9px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: #555555;
+}
+
+.guarantor-name {
+  display: block;
+
+  margin: 0;
+
+  color: #555555;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  line-height: 18px;
+}
+
+.guarantor-description {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #555555;
+
+  font-size: 9px;
+  font-weight: 400;
+
+  line-height: 13px;
+}
+
+/* Second guarantor card */
+.guarantor-card:nth-of-type(3) {
+  min-height: 58px;
+}
+
+/* =========================================================
+   GUARANTOR RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 750px) {
+  .guarantor-details-content {
+    width: 100%;
+  }
+
+  .guarantor-card {
+    width: 100%;
+  }
+}
+/* =========================================================
+   FAMILY DETAILS - FIGMA DESIGN
+   ========================================================= */
+
+.family-details-content {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.family-details-title {
+  margin: 0 0 24px;
+  padding: 0;
+  color: #111111;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.family-details-card {
+  width: 100%;
+  min-height: 76px;
+  box-sizing: border-box;
+
+  background: #dfeaf8;
+  border-radius: 9px;
+
+  padding: 15px 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: #555555;
+}
+
+.family-member-name {
+  display: block;
+
+  margin: 0 0 7px;
+
+  color: #555555;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  line-height: 18px;
+}
+
+.family-member-info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  margin: 0;
+
+  color: #555555;
+
+  font-size: 9px;
+  font-weight: 400;
+
+  line-height: 13px;
+}
+
+.family-divider {
+  margin: 0 7px;
+  color: #777777;
+}
+
+.family-member-address {
+  margin-top: 2px;
+
+  color: #555555;
+
+  font-size: 9px;
+  font-weight: 400;
+
+  line-height: 13px;
+}
+
+/* =========================================================
+   FAMILY DETAILS RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 750px) {
+  .family-details-content {
+    width: 100%;
+  }
+
+  .family-details-card {
+    width: 100%;
+  }
+
+  .family-member-info {
+    display: block;
+  }
+
+  .family-divider {
+    display: none;
+  }
+}
+/* =========================================================
+   JOB DETAILS - FIGMA DESIGN
+   ========================================================= */
+
+.job-details-content {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 8px 20px;
+  color: #111111;
+}
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.job-details-title {
+  margin: 0 0 24px 0;
+  padding: 0;
+
+  font-size: 15px;
+  line-height: 1.3;
+  font-weight: 700;
+
+  color: #111111;
+}
+
+/* =========================================================
+   JOB ROLE
+   ========================================================= */
+
+.job-role-section {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.job-label {
+  margin-bottom: 10px;
+
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 400;
+
+  color: #111111;
+}
+
+.job-role-value {
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 700;
+
+  color: #111111;
+}
+
+/* =========================================================
+   DEPARTMENT
+   ========================================================= */
+
+.job-department-section {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.job-department-value {
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 700;
+
+  color: #111111;
+}
+
+/* =========================================================
+   JOB DESCRIPTION
+   ========================================================= */
+
+.job-description-section {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.job-description-title {
+  margin: 0 0 12px 0;
+
+  text-align: center;
+
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 700;
+
+  color: #111111;
+}
+
+.job-description-intro {
+  margin: 0 0 12px 0;
+
+  font-size: 11px;
+  line-height: 1.4;
+  font-weight: 400;
+
+  color: #111111;
+}
+
+/* =========================================================
+   DESCRIPTION BULLETS
+   ========================================================= */
+
+.job-description-list {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  font-size: 10px;
+  line-height: 1.4;
+  font-weight: 400;
+
+  color: #111111;
+}
+
+.job-description-list div {
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================================
+   VIEW DOCUMENTS BUTTON
+   ========================================================= */
+
+.job-view-documents-button {
+  margin-top: 18px;
+
+  min-width: 150px;
+  height: 34px;
+
+  padding: 0 22px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #348c1d;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.job-view-documents-button:hover {
+  background: #287216;
+}
+
+.job-view-documents-button:active {
+  transform: scale(0.98);
+}
+
+.job-view-documents-button:focus {
+  outline: none;
+}
+
+/* =========================================================
+   JOB DETAILS RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 750px) {
+  .job-details-content {
+    padding: 0 5px 20px;
+  }
+
+  .job-details-title {
+    font-size: 14px;
+  }
+
+  .job-role-value,
+  .job-department-value {
+    font-size: 18px;
+  }
+
+  .job-description-title {
+    font-size: 15px;
+  }
+
+  .job-description-list {
+    font-size: 9px;
+  }
+}
+/* =========================================================
+   FINANCIAL DETAILS - FIGMA DESIGN
+========================================================= */
+
+.financial-details-content {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.financial-details-title {
+  margin: 0 0 34px;
+  color: #111111;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.financial-field {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.financial-field label {
+  display: block;
+  margin: 0 0 12px;
+  color: #111111;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.financial-value {
+  width: 100%;
+  min-height: 40px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 20px;
+
+  background: #dfeaf8;
+  border-radius: 9px;
+
+  color: #555555;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.financial-bank-field {
+  margin-bottom: 52px;
+}
+
+.financial-two-column {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 46px;
+}
+
+.financial-button-wrapper {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  margin-top: 98px;
+}
+
+.financial-update-button {
+  width: 283px;
+  height: 38px;
+
+  border: none;
+  border-radius: 5px;
+
+  background: #368c1f;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.financial-update-button:hover {
+  background: #2f7b1b;
+  transform: translateY(-1px);
+}
+
+.financial-update-button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 800px) {
+  .financial-two-column {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+
+  .financial-bank-field {
+    margin-bottom: 30px;
+  }
+
+  .financial-button-wrapper {
+    margin-top: 45px;
+  }
+}
+
+@media (max-width: 500px) {
+  .financial-details-title {
+    margin-bottom: 24px;
+  }
+
+  .financial-value {
+    min-height: 42px;
+    padding: 0 15px;
+  }
+
+  .financial-update-button {
+    width: 100%;
+  }
+}
