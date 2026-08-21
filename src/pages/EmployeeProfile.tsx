@@ -315,7 +315,6 @@ const EmployeeProfile = () => {
 
                       <div className="education-value education-date-value">
                         <span>01/01/1998</span>
-
                         <CalendarDays size={16} strokeWidth={1.8} />
                       </div>
                     </div>
@@ -325,7 +324,6 @@ const EmployeeProfile = () => {
 
                       <div className="education-value education-date-value">
                         <span>01/01/2019</span>
-
                         <CalendarDays size={16} strokeWidth={1.8} />
                       </div>
                     </div>
@@ -446,7 +444,6 @@ const EmployeeProfile = () => {
 
                       <div className="professional-value professional-date-value">
                         <span>01/01/2020</span>
-
                         <CalendarDays size={16} strokeWidth={1.8} />
                       </div>
                     </div>
@@ -456,7 +453,6 @@ const EmployeeProfile = () => {
 
                       <div className="professional-value professional-date-value">
                         <span>01/01/2021</span>
-
                         <CalendarDays size={16} strokeWidth={1.8} />
                       </div>
                     </div>
@@ -550,6 +546,84 @@ const EmployeeProfile = () => {
           )}
 
           {/* ==================================================
+              JOB DETAILS - FIGMA SCREEN
+          ================================================== */}
+
+          {activeSection === "job" && (
+            <div className="job-details-content">
+              <h2 className="job-details-title">View Job Details</h2>
+
+              <div className="job-role-section">
+                <div className="job-label">Job Role</div>
+
+                <div className="job-role-value">UI UX Designer</div>
+              </div>
+
+              <div className="job-department-section">
+                <div className="job-label">Department</div>
+
+                <div className="job-department-value">
+                  Design &amp; Marketing
+                </div>
+              </div>
+
+              <div className="job-description-section">
+                <h3 className="job-description-title">Job Description</h3>
+
+                <p className="job-description-intro">
+                  Your responsibilities will include:
+                </p>
+
+                <div className="job-description-list">
+                  <div>
+                    • Creating user-centered designs by understanding business
+                    requirements, and user feedback
+                  </div>
+
+                  <div>
+                    • Creating user flows, wireframes, prototypes and mockups
+                  </div>
+
+                  <div>
+                    • Translating requirements into style guides, design
+                    systems, design patterns and attractive user interfaces
+                  </div>
+
+                  <div>
+                    • Designing UI elements such as input controls, navigational
+                    components and informational components
+                  </div>
+
+                  <div>
+                    • Creating original graphic designs (e.g. images, sketches
+                    and tables)
+                  </div>
+
+                  <div>
+                    • Identifying and troubleshooting UX problems (e.g.
+                    responsiveness)
+                  </div>
+
+                  <div>
+                    • Collaborating effectively with product, engineering, and
+                    management teams
+                  </div>
+
+                  <div>
+                    • Incorporating customer feedback, usage metrics, and
+                    usability findings into design in order to enhance user
+                    experience
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" className="job-view-documents-button">
+                View Documents
+              </button>
+            </div>
+          )}
+
+          {/* ==================================================
               FINANCIAL DETAILS - FIGMA SCREEN
           ================================================== */}
 
@@ -601,6 +675,7 @@ const EmployeeProfile = () => {
             activeSection !== "education" &&
             activeSection !== "guarantor" &&
             activeSection !== "family" &&
+            activeSection !== "job" &&
             activeSection !== "financial" && (
               <div className="profile-placeholder">
                 <h3>

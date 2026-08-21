@@ -5,6 +5,7 @@ import {
   Route,
   useNavigate,
   useLocation,
+  Navigate,
 } from "react-router-dom";
 
 import EmployeeManagement from "./components/EmployeeManagement";
@@ -19,17 +20,30 @@ function AppLayout() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const [activePage, setActivePage] = useState("dashboard");
+  /*
+   * Employee Management is the default page.
+   * This makes Employee Management active when the application opens.
+   */
+  const [activePage, setActivePage] = useState(
+    location.pathname.startsWith("/employee-profile")
+      ? "employee-management"
+      : location.pathname === "/employees" ||
+          location.pathname === "/employee-management"
+        ? "employee-management"
+        : "employee-management",
+  );
 
   const handleSetActivePage = (page: string) => {
     setActivePage(page);
 
     if (page === "employee-management") {
       navigate("/employees");
+      return;
     }
 
     if (page === "dashboard") {
       navigate("/");
+      return;
     }
   };
 
@@ -39,25 +53,30 @@ function AppLayout() {
     location.pathname === "/employees" ||
     location.pathname === "/employee-management";
 
+  const isDashboard = location.pathname === "/";
+
   return (
     <div className="app">
+      {/* EXISTING SIDEBAR - NO CHANGE */}
       <Sidebar activePage={activePage} setActivePage={handleSetActivePage} />
 
       <div className="main-area">
+        {/* EXISTING TOPBAR - NO CHANGE */}
         <Topbar />
 
         <main className="page-content">
+          {/* EMPLOYEE PROFILE */}
           {isEmployeeProfile && <EmployeeProfile />}
 
+          {/* EMPLOYEE MANAGEMENT */}
           {isEmployeeManagement && <EmployeeManagement />}
 
-          {!isEmployeeProfile &&
-            !isEmployeeManagement &&
-            location.pathname === "/" && (
-              <div>
-                <h1>Dashboard</h1>
-              </div>
-            )}
+          {/* DASHBOARD */}
+          {isDashboard && (
+            <div>
+              <h1>Dashboard</h1>
+            </div>
+          )}
         </main>
       </div>
     </div>
@@ -68,13 +87,22 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<AppLayout />} />
+        {/* 
+          When application opens at localhost:5173,
+          automatically open Employee Management.
+        */}
+        <Route path="/" element={<Navigate to="/employees" replace />} />
 
+        {/* Employee Management */}
         <Route path="/employees" element={<AppLayout />} />
 
         <Route path="/employee-management" element={<AppLayout />} />
 
+        {/* Employee Profile */}
         <Route path="/employee-profile/:id" element={<AppLayout />} />
+
+        {/* Optional fallback */}
+        <Route path="*" element={<Navigate to="/employees" replace />} />
       </Routes>
     </BrowserRouter>
   );
