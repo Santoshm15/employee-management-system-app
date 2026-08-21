@@ -2448,3 +2448,740 @@ input {
     width: 100%;
   }
 }
+
+/* =========================================================
+   FINAL RESPONSIVE DESIGN
+========================================================= */
+
+/* =========================================================
+   TABLET - 901px TO 1100px
+========================================================= */
+
+@media (max-width: 1100px) {
+  .sidebar {
+    width: 210px;
+  }
+
+  .main-area {
+    margin-left: 210px;
+  }
+
+  .topbar {
+    padding: 0 20px;
+    gap: 20px;
+  }
+
+  .search-box {
+    width: min(453px, 45vw);
+  }
+
+  .page-content {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .employee-card {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .employee-table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .employee-table {
+    min-width: 850px;
+  }
+}
+
+/* =========================================================
+   TABLET - 768px TO 900px
+========================================================= */
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 190px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .main-area {
+    margin-left: 190px;
+  }
+
+  .topbar {
+    height: 90px;
+    padding: 0 15px;
+    gap: 15px;
+  }
+
+  .search-box {
+    width: 100%;
+    max-width: 380px;
+  }
+
+  .topbar-actions {
+    gap: 10px;
+  }
+
+  .employee-card-header {
+    gap: 15px;
+  }
+
+  .employee-table-container {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .employee-table {
+    min-width: 850px;
+  }
+}
+
+/* =========================================================
+   MOBILE - UP TO 700px
+========================================================= */
+
+@media (max-width: 700px) {
+  /* -------------------------
+     SIDEBAR
+  ------------------------- */
+
+  .sidebar {
+    width: 68px;
+    padding: 18px 7px 0;
+  }
+
+  .main-area {
+    margin-left: 68px;
+    width: calc(100% - 68px);
+    min-width: 0;
+  }
+
+  .sidebar-logo {
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 25px;
+  }
+
+  .sidebar-logo span {
+    display: none;
+  }
+
+  .logo-symbol {
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+  }
+
+  .admin-profile {
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 25px;
+  }
+
+  .admin-info {
+    display: none;
+  }
+
+  .admin-avatar {
+    width: 45px;
+    height: 45px;
+    font-size: 19px;
+  }
+
+  .section-title {
+    display: none;
+  }
+
+  .sidebar-section {
+    margin-bottom: 8px;
+  }
+
+  .sidebar-item {
+    min-height: 42px;
+    width: 100%;
+    padding: 8px 4px;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .sidebar-item span {
+    display: none;
+  }
+
+  .sidebar-item svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .notification {
+    display: none !important;
+  }
+
+  .logout-button {
+    width: 100%;
+    height: 42px;
+    padding: 0;
+    gap: 0;
+  }
+
+  .logout-button span {
+    display: none;
+  }
+
+  .logout-button svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .sidebar-bottom {
+    height: 25px;
+  }
+
+  .sidebar-bottom span {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* -------------------------
+     TOPBAR
+  ------------------------- */
+
+  .topbar {
+    width: 100%;
+    height: 78px;
+    padding: 0 10px;
+    gap: 8px;
+  }
+
+  .menu-button {
+    width: 34px;
+    height: 38px;
+    flex-shrink: 0;
+  }
+
+  .menu-button svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .search-box {
+    width: auto;
+    flex: 1;
+    min-width: 0;
+    max-width: none;
+    height: 40px;
+  }
+
+  .candidate-button {
+    width: 82px;
+    height: 40px;
+    padding: 0 5px;
+    gap: 3px;
+    font-size: 9px;
+  }
+
+  .candidate-button svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .search-box input {
+    height: 40px;
+    min-width: 0;
+    padding: 0 35px 0 10px;
+    font-size: 10px;
+  }
+
+  .search-icon {
+    right: 9px;
+  }
+
+  .search-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .topbar-actions {
+    gap: 5px;
+    flex-shrink: 0;
+  }
+
+  .top-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .top-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .top-badge {
+    width: 12px;
+    height: 12px;
+    font-size: 6px;
+    top: -3px;
+    right: -3px;
+  }
+
+  /* -------------------------
+     PAGE CONTENT
+  ------------------------- */
+
+  .page-content {
+    width: 100%;
+    padding: 0 8px 20px;
+    overflow-x: hidden;
+  }
+
+  /* -------------------------
+     EMPLOYEE MANAGEMENT
+  ------------------------- */
+
+  .employee-management {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .employee-breadcrumb {
+    margin: 0 0 10px;
+    font-size: 11px;
+    line-height: 18px;
+  }
+
+  .employee-card {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .employee-card-header {
+    width: 100%;
+    margin-bottom: 12px;
+    gap: 10px;
+  }
+
+  .employee-card-header h2 {
+    font-size: 14px;
+  }
+
+  .employee-card-actions {
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .filter-button {
+    width: 28px;
+    height: 28px;
+  }
+
+  .filter-button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .export-button {
+    height: 34px;
+    padding: 0 9px;
+    gap: 5px;
+    font-size: 10px;
+  }
+
+  .export-button svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  /* -------------------------
+     EMPLOYEE TABLE
+  ------------------------- */
+
+  .employee-table-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .employee-table {
+    min-width: 850px;
+    width: 850px;
+    table-layout: fixed;
+  }
+
+  .employee-table thead th {
+    height: 48px;
+    padding: 0 10px;
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
+  .employee-table tbody td {
+    height: 50px;
+    padding: 0 10px;
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
+  .employee-name {
+    font-size: 10px;
+  }
+
+  .employee-category {
+    font-size: 10px;
+  }
+
+  .employee-dropdown-button {
+    min-width: 85px;
+    height: 30px;
+    padding: 0 8px;
+    font-size: 9px;
+    gap: 5px;
+  }
+
+  .employee-dropdown-button svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE - UP TO 480px
+========================================================= */
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 58px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .main-area {
+    margin-left: 58px;
+    width: calc(100% - 58px);
+  }
+
+  .logo-symbol {
+    width: 32px;
+    height: 32px;
+    font-size: 17px;
+  }
+
+  .admin-avatar {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  .sidebar-item {
+    min-height: 38px;
+  }
+
+  .sidebar-item svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .logout-button {
+    height: 38px;
+  }
+
+  .topbar {
+    height: 70px;
+    padding: 0 7px;
+    gap: 5px;
+  }
+
+  .menu-button {
+    width: 28px;
+  }
+
+  .menu-button svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .search-box {
+    height: 36px;
+  }
+
+  .candidate-button {
+    width: 70px;
+    height: 36px;
+    font-size: 8px;
+  }
+
+  .search-box input {
+    height: 36px;
+    padding-left: 7px;
+    font-size: 9px;
+  }
+
+  .search-icon {
+    right: 7px;
+  }
+
+  .search-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .topbar-actions {
+    gap: 3px;
+  }
+
+  .top-icon {
+    width: 27px;
+    height: 27px;
+  }
+
+  .top-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .page-content {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .employee-card {
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .employee-card-header {
+    align-items: flex-start;
+  }
+
+  .employee-card-header h2 {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .employee-card-actions {
+    gap: 5px;
+  }
+
+  .export-button {
+    height: 30px;
+    padding: 0 7px;
+    font-size: 9px;
+  }
+
+  .filter-button {
+    width: 25px;
+    height: 25px;
+  }
+
+  .filter-button svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .employee-table {
+    min-width: 800px;
+    width: 800px;
+  }
+
+  .employee-table thead th {
+    height: 44px;
+    padding: 0 8px;
+    font-size: 9px;
+  }
+
+  .employee-table tbody td {
+    height: 46px;
+    padding: 0 8px;
+    font-size: 9px;
+  }
+}
+
+/* =========================================================
+   EMPLOYEE PROFILE RESPONSIVE SUPPORT
+========================================================= */
+
+@media (max-width: 900px) {
+  .employee-profile-page {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .profile-layout {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .profile-section-menu {
+    max-width: 100%;
+  }
+
+  .profile-details-card {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .employee-profile-page {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .profile-breadcrumb {
+    width: 100%;
+    font-size: 11px;
+    line-height: 18px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .profile-layout {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .profile-section-menu {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .profile-section-button {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .profile-details-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+  }
+
+  /* PERSONAL DETAILS */
+
+  .personal-details-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .personal-job-row {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .personal-job-item {
+    width: 100%;
+  }
+
+  /* CONTACT DETAILS */
+
+  .contact-two-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contact-field {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contact-field.full-width {
+    width: 100%;
+  }
+
+  /* NEXT OF KIN */
+
+  .next-of-kin-two-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .next-of-kin-field {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .next-of-kin-address-field {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-layout {
+    gap: 8px;
+  }
+
+  .profile-details-card {
+    border-radius: 10px;
+  }
+
+  .personal-job-row {
+    gap: 12px;
+  }
+
+  .contact-two-column,
+  .next-of-kin-two-column {
+    gap: 10px;
+  }
+}
+
+/* =========================================================
+   PREVENT HORIZONTAL PAGE BREAKING
+========================================================= */
+
+html,
+body,
+#root {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+  .sidebar-item:hover {
+    transform: none;
+  }
+
+  .top-icon:hover {
+    transform: none;
+  }
+
+  .employee-dropdown-button:hover {
+    background: #29459b;
+  }
+
+  .export-button:hover {
+    background: #3d8b20;
+  }
+}
